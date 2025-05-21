@@ -1,0 +1,311 @@
+:root {
+    --primary-color: #d4b8c0; /* Пастельный розовый */
+    --secondary-color: #7d7d7d; /* Средний серый */
+    --background-color: #f8f8f8; /* Светло-серый фон */
+    --text-color: #333333; /* Темно-серый текст */
+    --light-accent: #e6d7dc; /* Светло-розовый акцент */
+    --dark-accent: #b0a1ad; /* Темно-розовый акцент */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-me img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-me img:hover {
+    transform: scale(1.05);
+}
+
+.about-me h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.about-me p {
+    font-size: 1.2em;
+    margin: 5px 0;
+    color: var(--secondary-color);
+}
+
+.social-links {
+    display: flex;
+    margin-top: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1em;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--dark-accent);
+}
+
+.social-icon::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--dark-accent);
+    transition: width 0.3s ease;
+}
+
+.social-icon:hover::after {
+    width: 100%;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 60px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--light-accent);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-color);
+}
+
+.services-description {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color);
+    line-height: 1.8;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.service-item {
+    background: var(--light-accent);
+    color: var(--text-color);
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 5px;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.service-item:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.case-study {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: var(--background-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.case-study h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+.case-study ul {
+    padding-left: 20px;
+}
+
+.case-study li {
+    margin-bottom: 10px;
+}
+
+.portfolio-image {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.thumbnail {
+    cursor: pointer;
+    position: relative;
+}
+
+.thumbnail:hover::after {
+    content: 'Нажмите для просмотра';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.fullscreen-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height 100%;
+    padding: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+.modal-image {
+    max-width: 90%;
+    max-height: 80%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    color: var(--secondary-color);
+    font-size: 0.9em;
+    background-color: white;
+    margin-top: 40px;
+    border-top: 1px solid var(--light-accent);
+}
+
+/* Анимации для появления элементов при скролле */
+.animate__animated.animate__fadeIn {
+    animation-duration: 1s;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .about-me img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    .portfolio-image {
+        max-width: 100%;
+    }
+    
+    .modal-content {
+        padding: 10px;
+    }
+    
+    .modal-image {
+        max-height: 70%;
+    }
+}
